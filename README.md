@@ -1,5 +1,7 @@
 # Pass-zenity
-Simple GUI interface of pass linux with zenity gui
+Simple GUI interface of `pass` linux command with zenity gui
+
+![image](https://github.com/Anant-mishra1729/Pass-zenity/assets/84588156/a19a2153-8bd6-4fec-b865-fa787c71ff5a)
 
 # Installation
 * Clone this repository
@@ -11,11 +13,11 @@ git clone https://github.com/Anant-mishra1729/Pass-zenity.git
 cd Pass-zenity && mv pass* ~/.local/bin/
 ```
 * Add keyboard shortcuts for easy access
+![image](https://github.com/Anant-mishra1729/Pass-zenity/assets/84588156/f5e843a6-d224-481b-a3b0-cc8fa84c7f93)
+ 
 
 # About
 #### pass-plugin
-![image](https://github.com/Anant-mishra1729/Pass-zenity/assets/84588156/a19a2153-8bd6-4fec-b865-fa787c71ff5a)
-
 To access all the 3 plugins (generate, show, remove)
 
 #### pass-generate
