@@ -13,6 +13,9 @@ cd Pass-zenity && mv pass* ~/.local/bin/
 * Add keyboard shortcuts for easy access
 
 # About
+#### pass-plugin
+To access all the 3 plugins (generate, show, remove)
+
 #### pass-generate
 Generates password for username
 * If password is not provided random password is generated for that username.
