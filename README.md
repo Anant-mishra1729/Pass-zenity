@@ -17,6 +17,8 @@ cd Pass-zenity && mv pass* ~/.local/bin/
 To access all the 3 plugins (generate, show, remove)
 
 #### pass-generate
+![image](https://github.com/Anant-mishra1729/Pass-zenity/assets/84588156/c1f7c16e-cdb2-451c-8138-9336039c12f6)
+
 Generates password for username
 * If password is not provided random password is generated for that username.
 * If username already exists the ui will ask for whether to overwrite the password or not.
