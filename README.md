@@ -7,10 +7,15 @@ Simple GUI interface of `pass` linux command with zenity gui
 * Clone this repository
 ```
 git clone https://github.com/Anant-mishra1729/Pass-zenity.git
+cd Pass-zenity
+```
+* Make all files executable
+```
+chmod u+x pass*
 ```
 * Place all the files except README.md in `~/.local/bin`, create `~/.local/bin` directory if it doesn't exist
 ```
-cd Pass-zenity && mv pass* ~/.local/bin/
+mv pass* ~/.local/bin/
 ```
 * Add keyboard shortcuts for easy access
 ![image](https://github.com/Anant-mishra1729/Pass-zenity/assets/84588156/f5e843a6-d224-481b-a3b0-cc8fa84c7f93)
