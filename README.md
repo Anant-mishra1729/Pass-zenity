@@ -20,22 +20,23 @@ mv pass* ~/.local/bin/
  
 
 # About
-#### pass-plugin
+### pass-plugin
 To access all the 3 plugins (generate, show, remove)
 
-#### pass-generate
-![image](https://github.com/Anant-mishra1729/Pass-zenity/assets/84588156/c1f7c16e-cdb2-451c-8138-9336039c12f6)
-
+### pass-generate
 Generates password for username
 * If password is not provided random password is generated for that username.
 * If username already exists the ui will ask for whether to overwrite the password or not.
+![image](https://github.com/Anant-mishra1729/Pass-zenity/assets/84588156/c1f7c16e-cdb2-451c-8138-9336039c12f6)
 
-#### pass-show
+
+### pass-show
 Gives a list preview of all usernames
 * Usernames are searchable
 * After selecting usernames, the password will be copied to clipboard for 45 seconds.
+![image](https://github.com/Anant-mishra1729/Pass-zenity/assets/84588156/55d3d6e7-b2cc-4b0b-bb2f-df455bb84cbb)
 
-#### pass-remove
-Removes a password 🙂
+
+### pass-remove (Removes a password 🙂)
 ![image](https://github.com/Anant-mishra1729/Pass-zenity/assets/84588156/47024eac-eeb3-4280-a350-9a66527b538a)
 
