@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Get the list of password entries
+passwords=$(find "$HOME/.password-store" -type f -name "*.gpg" -printf "%P\n" | sed 's/\.gpg$//')
+
+# Prompt the user to select a password entry from the list
+selected_password=$(zenity --list --height=700 --title="Select Password Entry" --text="Choose a password entry:" --column="Password Entry" $passwords)
+response=$?
+
+if [ $response -eq 1 ]; then
+    # User canceled, exit the script
+    exit 0
+fi
+
+# Get the password for the selected entry using "pass"
+pass show -c "$selected_password" 2>/dev/null
+
+# Check if previous command was successful
+if [ $? -ne 0 ]; then
+    # The password entry does not exist
+    notify-send --icon=password-manager "Error" "Some error occurred while retrieving the password."
+    exit 1
+fi
+
+# Show a notification indicating the password has been copied
+notify-send --icon=password-manager "Password Copied" "Copied $selected_password to clipboard. Will clear in 45 seconds."
+

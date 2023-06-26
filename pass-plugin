@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# Display a dialog box with script options
+selected_script=$(zenity --list --height=500 --title="Select Script" --text="Choose a function:" --column="Functions" "Show all passwords" "Generate a password" "Remove a password")
+response=$?
+
+if [ $response -eq 1 ]; then
+    # User canceled, exit the script
+    exit 0
+fi
+
+# Execute the selected script
+case $selected_script in
+    "Show all passwords")
+        # Run the command to show all passwords
+        pass-show
+        ;;
+    "Generate a password")
+        # Run the command to generate a password
+        pass-generate
+        ;;
+    "Remove a password")
+        pass-remove
+        ;;
+    *)
+        # Invalid script selected
+        echo "Invalid script selected."
+        ;;
+esac
+

@@ -1,0 +1,40 @@
+#!/bin/bash
+
+# Prompt the user for the password entry path (username) and password
+ENTRY=$(zenity --password --username)
+username=$(echo "$ENTRY" | cut -d'|' -f1)
+password=$(echo "$ENTRY" | cut -d'|' -f2)
+
+if [ -z "$username" ]; then
+    # Show an error message if the username is empty
+    exit 0
+fi
+
+if [ -f "$HOME/.password-store/$username.gpg" ]; then
+    zenity --question --text="The password entry '$username' already exists. Do you want to overwrite it?" --title="Confirmation"
+    response=$?
+    if [ $response -eq 0 ]; then
+        if [ -z "$password" ]; then
+            # Password is empty, generate a new password
+            password=$(pass generate -f "$username" 2>&1)
+            notify-send --icon=password-manager "Password Generated" "Generated random password for $username"
+        else
+            # User entered a password
+            pass insert -e "$username" <<< "$password"
+            notify-send --icon=password-manager "Password Added" "Added password for $username"
+        fi
+    else
+        notify-send --icon=password-manager "No operation performed" "Password not added for $username"
+        exit 0
+    fi
+else
+    if [ -z "$password" ]; then
+        # Password is empty, generate a new password
+        password=$(pass generate "$username" 2>&1)
+        notify-send --icon=password-manager "Password Generated" "Generated random password for $username"
+    else
+        # User entered a password
+        pass insert -e "$username" <<< "$password"
+        notify-send --icon=password-manager "Password Added" "Added password for $username"
+    fi
+fi

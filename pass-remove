@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# Get the list of password entries
+passwords=$(find "$HOME/.password-store" -type f -name "*.gpg" -printf "%P\n" | sed 's/\.gpg$//')
+
+# Prompt the user to select a password entry from the list
+selected_password=$(zenity --list --height=700 --title="Warning! removing password entry" --text="Choose a password entry to remove:" --column="Password Entry" $passwords)
+response=$?
+
+if [ $response -eq 1 ]; then
+    # User canceled, exit the script
+    exit 0
+fi
+
+# Construct the HTML content for the confirmation dialog
+confirmation_html="<span color='red'><b>Are you sure you want to remove the password entry '$selected_password'?</b></span>"
+
+# Confirm the removal with the user
+zenity --question --title="Confirmation" --text="$confirmation_html"
+confirmation=$?
+
+if [ $confirmation -eq 1 ]; then
+    # User canceled the removal, exit the script
+    exit 0
+fi
+
+# Remove the password entry using "pass"
+(echo y; sleep 0.1) | pass rm -r "$selected_password"
+
+# Show a notification indicating the password entry has been removed
+notify-send --icon=password-manager "Password Entry Removed" "Removed password entry: $selected_password"
+
