@@ -14,6 +14,8 @@ cd Pass-zenity && mv pass* ~/.local/bin/
 
 # About
 #### pass-plugin
+![image](https://github.com/Anant-mishra1729/Pass-zenity/assets/84588156/a19a2153-8bd6-4fec-b865-fa787c71ff5a)
+
 To access all the 3 plugins (generate, show, remove)
 
 #### pass-generate
