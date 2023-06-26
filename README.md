@@ -1,8 +1,6 @@
 # Pass-zenity
 Simple GUI interface of `pass` linux command with zenity gui
-
-![image](https://github.com/Anant-mishra1729/Pass-zenity/assets/84588156/a19a2153-8bd6-4fec-b865-fa787c71ff5a)
-
+![image](https://github.com/Anant-mishra1729/Pass-zenity/assets/84588156/8634cb3c-e8ab-4495-b40f-bb0851df50a3)
 # Installation
 * Clone this repository
 ```
