@@ -37,6 +37,6 @@ Gives a list preview of all usernames
 ![image](https://github.com/Anant-mishra1729/Pass-zenity/assets/84588156/55d3d6e7-b2cc-4b0b-bb2f-df455bb84cbb)
 
 
-### pass-remove (Removes a password 🙂)
+### pass-remove
 ![image](https://github.com/Anant-mishra1729/Pass-zenity/assets/84588156/47024eac-eeb3-4280-a350-9a66527b538a)
 
